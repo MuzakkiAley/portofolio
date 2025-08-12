@@ -1,0 +1,285 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Variabel Warna dan Reset CSS */
+:root {
+    --bg-color: #222831;
+    --second-bg-color: #393E46;
+    --text-color: #ffffff;
+    --main-color: #948979;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header / Navigasi */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid var(--second-bg-color);
+}
+
+.logo {
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* Section Umum */
+.section {
+    min-height: 100vh;
+    padding: 10rem 10% 2rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-title span {
+    color: var(--main-color);
+}
+
+/* Section Beranda */
+#beranda {
+    display: flex;
+    align-items: center;
+}
+
+#beranda .content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+#beranda .content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin: 1rem 0;
+}
+
+#beranda .content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.tombol-grup {
+    margin-top: 2rem;
+}
+
+.tombol-grup a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    border-radius: 40px;
+    font-size: 16px;
+    color: var(--bg-color);
+    letter-spacing: 1px;
+    font-weight: 600;
+    border: 2px solid var(--main-color);
+    transition: .5s;
+    margin-right: 1rem;
+}
+
+.tombol-grup a:hover {
+    background: transparent;
+    color: var(--main-color);
+}
+
+/* Section Tentang */
+#tentang {
+    background: var(--second-bg-color);
+}
+#tentang .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+#tentang .content p {
+    margin-bottom: 1rem;
+}
+
+/* Section Proyek */
+.proyek-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.proyek-card {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyek-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+.proyek-card h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.proyek-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.proyek-card .teknologi {
+    margin-bottom: 1.5rem;
+}
+
+.proyek-card .teknologi span {
+    background: var(--bg-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin: 0 5px;
+}
+
+.tombol-proyek {
+    padding: 10px 20px;
+    background: var(--main-color);
+    border-radius: 20px;
+    color: var(--bg-color);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.tombol-proyek:hover {
+    background: #008fbf;
+}
+
+/* Section Keahlian */
+#keahlian {
+    background: var(--second-bg-color);
+}
+
+.keahlian-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.grup-keahlian {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.grup-keahlian h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.grup-keahlian ul {
+    list-style: none;
+}
+
+.grup-keahlian ul li {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+}
+
+/* Section Kontak */
+.kontak-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.kontak-info p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px 10%;
+    background: var(--second-bg-color);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+    .navbar {
+        display: none; /* Sembunyikan navbar di mobile, bisa dikembangkan dengan menu hamburger */
+    }
+    .section {
+        padding: 8rem 5% 2rem;
+    }
+    #beranda .content h1 {
+        font-size: 3rem;
+    }
+    #beranda .content h3 {
+        font-size: 1.5rem;
+    }
+}
