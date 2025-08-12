@@ -1,4 +1,17 @@
-// Menangani link navigasi yang aktif saat di-scroll
+// ===========================================
+// BAGIAN BARU: Logika untuk Hamburger Menu
+// ===========================================
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x'); // Mengubah ikon hamburger menjadi 'X'
+    navbar.classList.toggle('active'); // Menampilkan atau menyembunyikan menu
+};
+
+// ===========================================
+// Kode Lama (tetap dipertahankan)
+// ===========================================
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
@@ -20,19 +33,8 @@ window.onscroll = () => {
     // Sticky header
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
-};
 
-// Smooth scrolling (opsional, karena CSS sudah handle)
-// Namun, ini lebih robust
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        let targetId = this.getAttribute('href');
-        let targetSection = document.querySelector(targetId);
-        
-        window.scrollTo({
-            top: targetSection.offsetTop - 80, // Menyesuaikan dengan tinggi header
-            behavior: 'smooth'
-        });
-    });
-});
+    // Menutup menu mobile saat scroll
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
