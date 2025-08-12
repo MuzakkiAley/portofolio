@@ -59,6 +59,14 @@ body {
     color: var(--main-color);
 }
 
+/* Ikon Menu untuk Mobile */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Sembunyikan di desktop */
+}
+
 /* Section Umum */
 .section {
     min-height: 100vh;
@@ -115,6 +123,7 @@ body {
     border: 2px solid var(--main-color);
     transition: .5s;
     margin-right: 1rem;
+    margin-bottom: 1rem; /* Tambahan untuk mobile */
 }
 
 .tombol-grup a:hover {
@@ -122,164 +131,88 @@ body {
     color: var(--main-color);
 }
 
-/* Section Tentang */
-#tentang {
-    background: var(--second-bg-color);
-}
-#tentang .content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-#tentang .content p {
-    margin-bottom: 1rem;
-}
+/* (Sisa kode CSS dari Section Tentang sampai Footer tetap sama persis) */
 
-/* Section Proyek */
-.proyek-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+#tentang { background: var(--second-bg-color); }
+#tentang .content { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.6; }
+#tentang .content p { margin-bottom: 1rem; }
+.proyek-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.proyek-card { background: var(--second-bg-color); padding: 2rem; border-radius: 10px; text-align: center; border: 1px solid transparent; transition: .5s; display: flex; flex-direction: column; justify-content: space-between; }
+.proyek-card:hover { border-color: var(--main-color); transform: translateY(-5px); }
+.proyek-card h3 { font-size: 1.5rem; color: var(--main-color); margin-bottom: 1rem; }
+.proyek-card p { font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; }
+.proyek-card .teknologi { margin-bottom: 1.5rem; }
+.proyek-card .teknologi span { background: var(--bg-color); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; margin: 0 5px; }
+.tombol-proyek { padding: 10px 20px; background: var(--main-color); border-radius: 20px; color: var(--bg-color); font-weight: 600; transition: .3s; }
+.tombol-proyek:hover { background: #008fbf; }
+#keahlian { background: var(--second-bg-color); }
+.keahlian-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: center; }
+.grup-keahlian { background: var(--bg-color); padding: 2rem; border-radius: 10px; }
+.grup-keahlian h3 { font-size: 1.5rem; color: var(--main-color); margin-bottom: 1rem; }
+.grup-keahlian ul { list-style: none; }
+.grup-keahlian ul li { font-size: 1.1rem; padding: 0.5rem 0; }
+.kontak-info { max-width: 600px; margin: 0 auto; text-align: center; }
+.kontak-info p { font-size: 1.2rem; margin-bottom: 2rem; }
+.info-item { display: flex; align-items: center; justify-content: center; margin: 1rem 0; font-size: 1.1rem; }
+.info-item i { font-size: 1.5rem; color: var(--main-color); margin-right: 10px; }
+.footer { padding: 20px 10%; background: var(--second-bg-color); text-align: center; font-size: 0.9rem; }
 
-.proyek-card {
-    background: var(--second-bg-color);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid transparent;
-    transition: .5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
-.proyek-card:hover {
-    border-color: var(--main-color);
-    transform: translateY(-5px);
-}
+/* ========================================= */
+/* BAGIAN RESPONSIVE - MEDIA QUERIES (BARU) */
+/* ========================================= */
 
-.proyek-card h3 {
-    font-size: 1.5rem;
-    color: var(--main-color);
-    margin-bottom: 1rem;
-}
-
-.proyek-card p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.proyek-card .teknologi {
-    margin-bottom: 1.5rem;
-}
-
-.proyek-card .teknologi span {
-    background: var(--bg-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    margin: 0 5px;
-}
-
-.tombol-proyek {
-    padding: 10px 20px;
-    background: var(--main-color);
-    border-radius: 20px;
-    color: var(--bg-color);
-    font-weight: 600;
-    transition: .3s;
-}
-
-.tombol-proyek:hover {
-    background: #008fbf;
-}
-
-/* Section Keahlian */
-#keahlian {
-    background: var(--second-bg-color);
-}
-
-.keahlian-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    text-align: center;
-}
-
-.grup-keahlian {
-    background: var(--bg-color);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.grup-keahlian h3 {
-    font-size: 1.5rem;
-    color: var(--main-color);
-    margin-bottom: 1rem;
-}
-
-.grup-keahlian ul {
-    list-style: none;
-}
-
-.grup-keahlian ul li {
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
-}
-
-/* Section Kontak */
-.kontak-info {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.kontak-info p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0;
-    font-size: 1.1rem;
-}
-
-.info-item i {
-    font-size: 1.5rem;
-    color: var(--main-color);
-    margin-right: 10px;
-}
-
-/* Footer */
-.footer {
-    padding: 20px 10%;
-    background: var(--second-bg-color);
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
+/* Untuk Tablet */
+@media (max-width: 992px) {
     .header {
         padding: 20px 5%;
     }
-    .navbar {
-        display: none; /* Sembunyikan navbar di mobile, bisa dikembangkan dengan menu hamburger */
-    }
     .section {
-        padding: 8rem 5% 2rem;
+        padding: 10rem 5% 2rem;
     }
+}
+
+/* Untuk Mobile */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; /* Tampilkan ikon hamburger */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%; /* Sembunyikan di kiri */
+        width: 100%;
+        padding: 1rem 5%;
+        background: var(--bg-color);
+        border-top: 1px solid var(--second-bg-color);
+        transition: .3s;
+    }
+
+    .navbar.active {
+        left: 0; /* Tampilkan saat aktif */
+    }
+
+    .navbar a {
+        display: block; /* Buat link jadi satu baris penuh */
+        font-size: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+    }
+
+    #beranda {
+        text-align: center; /* Pusatkan teks di beranda */
+    }
+
     #beranda .content h1 {
         font-size: 3rem;
     }
+
     #beranda .content h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
     }
 }
